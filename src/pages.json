@@ -1,0 +1,126 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/home",
+      "style": { "navigationBarTitleText": "首页" }
+    },
+    {
+      "path": "pages/admin/login",
+      "style": { "navigationBarTitleText": "管理员登录" }
+    },
+    {
+      "path": "pages/admin/index",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "管理系统" }
+    },
+    {
+      "path": "pages/admin/users",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "用户管理" }
+    },
+    {
+      "path": "pages/admin/courses",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "课程管理" }
+    },
+    {
+      "path": "pages/admin/questions",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "题库管理" }
+    },
+    {
+      "path": "pages/admin/exams",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "考试管理" }
+    },
+    {
+      "path": "pages/admin/materials",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "资料管理" }
+    },
+    {
+      "path": "pages/admin/forum",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "论坛管理" }
+    },
+    {
+      "path": "pages/login/login",
+      "style": { "navigationBarTitleText": "登录" }
+    },
+    {
+      "path": "pages/register/register",
+      "style": { "navigationBarTitleText": "注册" }
+    },
+    {
+      "path": "pages/learn/learn",
+      "style": { "navigationBarTitleText": "学习" }
+    },
+    {
+      "path": "pages/practice/practice",
+      "style": { "navigationBarTitleText": "题库" }
+    },
+    {
+      "path": "pages/practice/do",
+      "style": { "navigationBarTitleText": "答题" }
+    },
+    {
+      "path": "pages/profile/profile",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "我的" }
+    },
+    {
+      "path": "pages/course/detail",
+      "style": { "navigationBarTitleText": "课程详情" }
+    },
+    {
+      "path": "pages/exam/list",
+      "style": { "navigationBarTitleText": "实例实战" }
+    },
+    {
+      "path": "pages/exam/take",
+      "style": { "navigationBarTitleText": "模拟考试" }
+    },
+    {
+      "path": "pages/wrong/wrong",
+      "style": { "navigationBarTitleText": "错题集" }
+    },
+    {
+      "path": "pages/forum/list",
+      "style": { "navigationBarTitleText": "论坛" }
+    },
+    {
+      "path": "pages/forum/detail",
+      "style": { "navigationBarTitleText": "帖子详情" }
+    },
+    {
+      "path": "pages/forum/post",
+      "style": { "navigationBarTitleText": "发帖" }
+    },
+    {
+      "path": "pages/score/list",
+      "style": { "navigationBarTitleText": "成绩记录" }
+    },
+    {
+      "path": "pages/learning/list",
+      "style": { "navigationBarTitleText": "学习记录" }
+    },
+    {
+      "path": "pages/profile/password",
+      "style": { "navigationBarTitleText": "修改密码" }
+    },
+    {
+      "path": "pages/profile/edit",
+      "style": { "navigationBarTitleText": "修改信息" }
+    }
+  ],
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#1989fa",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/home/home", "text": "首页" },
+      { "pagePath": "pages/learn/learn", "text": "学习" },
+      { "pagePath": "pages/practice/practice", "text": "题库" },
+      { "pagePath": "pages/profile/profile", "text": "我的" }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "健康营养师",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  }
+}

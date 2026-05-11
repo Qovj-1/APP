@@ -1,0 +1,30 @@
+-- 增加 posts 表字段长度
+ALTER TABLE posts MODIFY COLUMN title VARCHAR(200) NOT NULL;
+ALTER TABLE posts MODIFY COLUMN user_account VARCHAR(100);
+
+-- 增加 users 表字段长度
+ALTER TABLE users MODIFY COLUMN account VARCHAR(100) NOT NULL;
+ALTER TABLE users MODIFY COLUMN name VARCHAR(100) NOT NULL;
+ALTER TABLE users MODIFY COLUMN education VARCHAR(50);
+ALTER TABLE users MODIFY COLUMN phone VARCHAR(20);
+ALTER TABLE users MODIFY COLUMN address VARCHAR(200);
+ALTER TABLE users MODIFY COLUMN email VARCHAR(100);
+
+-- 增加 courses 表字段长度
+ALTER TABLE courses MODIFY COLUMN name VARCHAR(200) NOT NULL;
+ALTER TABLE courses MODIFY COLUMN teacher_profile TEXT;
+ALTER TABLE courses MODIFY COLUMN introduction TEXT;
+
+-- 增加 materials 表字段长度
+ALTER TABLE materials MODIFY COLUMN name VARCHAR(200) NOT NULL;
+
+-- 增加 admins 表字段长度
+ALTER TABLE admins MODIFY COLUMN account VARCHAR(100) NOT NULL;
+ALTER TABLE admins MODIFY COLUMN name VARCHAR(100) NOT NULL;
+ALTER TABLE admins MODIFY COLUMN phone VARCHAR(20);
+
+-- 增加 knowledge_points 表字段长度
+ALTER TABLE knowledge_points MODIFY COLUMN name VARCHAR(200) NOT NULL;
+
+-- 增加 scores 表字段长度
+ALTER TABLE scores MODIFY COLUMN name VARCHAR(100) NOT NULL;

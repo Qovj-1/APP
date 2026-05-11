@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: nutrition-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/nutrition_db_new?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:123456789}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: false
+
+server:
+  port: 8080
+
+nutrition:
+  jwt:
+    secret: "nutritionist-jwt-secret-key-change-in-production-min-32-chars!!"
+    expire-minutes: 10080
+
+logging:
+  level:
+    org.hibernate.SQL: warn

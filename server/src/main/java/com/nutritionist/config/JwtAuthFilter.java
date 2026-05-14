@@ -33,7 +33,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         path.startsWith("/api/app/courses") ||
         path.startsWith("/api/app/questions") ||
         path.startsWith("/api/app/forum") ||
-        path.startsWith("/api/app/materials");
+        path.startsWith("/api/app/materials") ||
+        path.startsWith("/api/app/trainings");
     
     if (isPublic) {
       filterChain.doFilter(request, response);

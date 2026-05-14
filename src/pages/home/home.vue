@@ -8,10 +8,6 @@
         <image class="banner-img" :src="b.imageUrl" mode="aspectFill" />
       </swiper-item>
     </swiper>
-    <view class="nav-row">
-      <view class="nav-btn" @click="goExam">实例实战</view>
-      <view class="nav-btn" @click="goWrong">错题集</view>
-    </view>
     <view class="section">
       <view class="section-title">消息列表</view>
       <view v-for="item in messages" :key="item.id" class="msg-item">
@@ -53,12 +49,7 @@ export default {
         uni.showToast({ title: e.message || '加载失败', icon: 'none' })
       }
     },
-    goExam() {
-      uni.navigateTo({ url: '/pages/exam/list' })
-    },
-    goWrong() {
-      uni.navigateTo({ url: '/pages/wrong/wrong' })
-    },
+
   },
 }
 </script>
@@ -69,8 +60,6 @@ export default {
 .title { font-size: 36rpx; font-weight: 600; color: #fff; }
 .swiper { height: 300rpx; }
 .banner-img { width: 100%; height: 300rpx; }
-.nav-row { display: flex; padding: 24rpx; gap: 24rpx; }
-.nav-btn { flex: 1; background: #fff; padding: 24rpx; text-align: center; border-radius: 50rpx; font-size: 28rpx; box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.08); }
 .section { padding: 24rpx; }
 .section-title { font-size: 32rpx; font-weight: 600; margin-bottom: 16rpx; }
 .msg-item { background: #fff; padding: 20rpx 24rpx; border-radius: 12rpx; margin-bottom: 12rpx; display: flex; justify-content: space-between; align-items: center; }

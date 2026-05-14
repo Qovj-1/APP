@@ -3,18 +3,31 @@
     <view class="header">
       <text class="title">实例实战</text>
     </view>
-    <view class="paper-list">
-      <view v-for="paper in papers" :key="paper.typeId" class="paper-card">
-        <view class="paper-header">
-          <text class="paper-title">{{ paper.typeId === 1 ? '试卷1' : '试卷' + paper.typeId }}</text>
-          <text class="paper-diff">难度 {{ paper.difficult || '-' }}</text>
+    
+    <view class="main-content">
+      <view class="section">
+        <view class="project-list">
+          <view v-for="project in projects" :key="project.id" class="project-card" @click="goProject(project)">
+            <view class="project-header">
+              <text class="project-title">{{ project.name }}</text>
+              <text class="project-type">实训</text>
+            </view>
+            <view class="project-info">
+              <text class="info-item">课时：{{ project.time }}</text>
+            </view>
+            <view class="project-footer">
+              <text class="project-diff">难度系数 {{ project.difficult }}</text>
+              <text class="project-action">开始实训</text>
+            </view>
+          </view>
+          <view v-if="loading" class="empty">
+            <text class="empty-text">加载中...</text>
+          </view>
+          <view v-else-if="!projects.length" class="empty">
+            <text class="empty-text">暂无实训项目</text>
+          </view>
         </view>
-        <view class="paper-info">
-          <text class="info-item">考试时间：{{ paper.examTime || '未设置' }}</text>
-        </view>
-        <button class="exam-btn" @click="goExam(paper.typeId)">点击考试</button>
       </view>
-      <view v-if="!papers.length" class="empty">暂无试卷</view>
     </view>
   </view>
 </template>
@@ -24,25 +37,48 @@ import { request, getToken } from '@/utils/api.js'
 
 export default {
   data() {
-    return { papers: [] }
+    return { 
+      projects: [],
+      trainings: [],
+      loading: false
+    }
   },
   onShow() {
-    if (!getToken()) {
-      uni.redirectTo({ url: '/pages/login/login' })
-      return
-    }
     this.load()
   },
   methods: {
     async load() {
+      const token = getToken()
+      if (!token) {
+        return
+      }
+      
+      this.loading = true
       try {
-        this.papers = (await request({ url: '/app/exams/papers' })) || []
+        const trainingsRes = await request({ url: '/app/trainings' }).catch(() => [])
+        this.trainings = trainingsRes || []
+        
+        this.projects = this.trainings.map(t => ({
+          id: 'training_' + t.trainingId,
+          name: t.name || '实训项目',
+          time: t.time + '课时',
+          difficult: t.difficult || 1.0,
+          original: t
+        }))
       } catch (e) {
-        uni.showToast({ title: e.message || '加载失败', icon: 'none' })
+        console.error('加载失败:', e)
+        uni.showToast({ title: '加载失败', icon: 'none' })
+      } finally {
+        this.loading = false
       }
     },
-    goExam(id) {
-      uni.navigateTo({ url: '/pages/exam/take?id=' + id })
+    goProject(project) {
+      const token = getToken()
+      if (!token) {
+        uni.redirectTo({ url: '/pages/login/login' })
+        return
+      }
+      uni.navigateTo({ url: `/pages/train/detail?id=${project.original.trainingId}` })
     },
   },
 }
@@ -54,53 +90,86 @@ export default {
   background: #f5f5f5;
 }
 .header {
-  padding: 24rpx;
-  background: #1989fa;
+  padding: 32rpx;
+  background: #fff;
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .title {
   font-size: 36rpx;
   font-weight: 600;
-  color: #fff;
+  color: #333;
 }
-.paper-list {
+.main-content {
   padding: 24rpx;
+  padding-bottom: 120rpx;
 }
-.paper-card {
+.section {
   background: #fff;
-  padding: 24rpx;
   border-radius: 16rpx;
-  margin-bottom: 24rpx;
+  border: 1rpx solid #eee;
 }
-.paper-header {
+.project-list {
+  padding: 16rpx 24rpx;
+}
+.project-card {
+  padding: 20rpx;
+  background: #fafafa;
+  border-radius: 12rpx;
+  margin-bottom: 12rpx;
+}
+.project-card:last-child {
+  margin-bottom: 0;
+}
+.project-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16rpx;
+  margin-bottom: 8rpx;
 }
-.paper-title {
-  font-size: 32rpx;
+.project-title {
+  font-size: 28rpx;
   font-weight: 600;
+  color: #333;
 }
-.paper-diff {
-  font-size: 24rpx;
-  color: #999;
+.project-type {
+  font-size: 20rpx;
+  color: #1989fa;
+  background: #e6f4ff;
+  padding: 4rpx 10rpx;
+  border-radius: 6rpx;
 }
-.paper-info {
-  margin-bottom: 20rpx;
+.project-info {
+  margin-bottom: 12rpx;
 }
 .info-item {
-  font-size: 26rpx;
+  font-size: 24rpx;
   color: #666;
 }
-.exam-btn {
-  width: 100%;
-  background: #1989fa;
-  color: #fff;
-  border-radius: 12rpx;
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-diff {
+  font-size: 22rpx;
+  color: #999;
+}
+.project-action {
+  font-size: 24rpx;
+  color: #1989fa;
 }
 .empty {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300rpx;
+}
+.empty-text {
+  font-size: 26rpx;
   color: #999;
-  padding: 80rpx;
 }
 </style>

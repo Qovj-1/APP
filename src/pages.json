@@ -37,6 +37,18 @@
       "style": { "navigationStyle": "custom", "navigationBarTitleText": "论坛管理" }
     },
     {
+      "path": "pages/admin/trainings",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "实训管理" }
+    },
+    {
+      "path": "pages/train/detail",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "实训详情" }
+    },
+    {
+      "path": "pages/train/learn",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "实训学习" }
+    },
+    {
       "path": "pages/login/login",
       "style": { "navigationBarTitleText": "登录" }
     },
@@ -112,9 +124,10 @@
     "backgroundColor": "#ffffff",
     "list": [
       { "pagePath": "pages/home/home", "text": "首页" },
-      { "pagePath": "pages/learn/learn", "text": "学习" },
-      { "pagePath": "pages/practice/practice", "text": "题库" },
-      { "pagePath": "pages/profile/profile", "text": "我的" }
+      { "pagePath": "pages/learn/learn", "text": "学习浏览" },
+      { "pagePath": "pages/practice/practice", "text": "在线测试" },
+      { "pagePath": "pages/exam/list", "text": "实例实战" },
+      { "pagePath": "pages/profile/profile", "text": "个人中心" }
     ]
   },
   "globalStyle": {

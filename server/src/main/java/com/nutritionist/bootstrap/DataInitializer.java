@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import java.util.Arrays;
 
 @Component
 @Order(100)
@@ -25,6 +26,7 @@ public class DataInitializer implements CommandLineRunner {
   @Autowired private ExamPaperRepository examPaperRepository;
   @Autowired private BannerRepository bannerRepository;
   @Autowired private ForumPostRepository forumPostRepository;
+  @Autowired private TrainingRepository trainingRepository;
   @Autowired private PasswordEncoder passwordEncoder;
 
   @Override
@@ -110,6 +112,9 @@ public class DataInitializer implements CommandLineRunner {
     }
     if (realQuestionRepository.count() == 0) {
       addRealQuestions();
+    }
+    if (trainingRepository.count() == 0) {
+      addTrainings();
     }
   }
 
@@ -216,5 +221,52 @@ public class DataInitializer implements CommandLineRunner {
       rq.setAnalysis(q[3]);
       realQuestionRepository.save(rq);
     }
+  }
+
+  private void addTrainings() {
+    Training t1 = new Training();
+    t1.setTrainingId("TR001");
+    t1.setName("膳食调查与分析");
+    t1.setContent("学习膳食调查的基本方法，包括24小时回顾法、食物频率法、称重法等。掌握膳食营养素计算与分析技能。");
+    t1.setTime((short) 8);
+    t1.setKnowledgePoints("K001");
+    t1.setDifficult(3.0);
+    trainingRepository.save(t1);
+
+    Training t2 = new Training();
+    t2.setTrainingId("TR002");
+    t2.setName("营养咨询实操");
+    t2.setContent("模拟营养咨询场景，学习如何进行营养评估、制定个性化营养方案、进行健康教育。");
+    t2.setTime((short) 12);
+    t2.setKnowledgePoints("K002");
+    t2.setDifficult(3.5);
+    trainingRepository.save(t2);
+
+    Training t3 = new Training();
+    t3.setTrainingId("TR003");
+    t3.setName("特殊人群营养指导");
+    t3.setContent("学习孕妇、婴幼儿、老年人、慢性病患者等特殊人群的营养需求与膳食指导原则。");
+    t3.setTime((short) 10);
+    t3.setKnowledgePoints("K003");
+    t3.setDifficult(4.0);
+    trainingRepository.save(t3);
+
+    Training t4 = new Training();
+    t4.setTrainingId("TR004");
+    t4.setName("食谱设计与编制");
+    t4.setContent("掌握食谱设计的基本原则，学习根据不同人群、不同需求编制科学合理的食谱。");
+    t4.setTime((short) 6);
+    t4.setKnowledgePoints("K004");
+    t4.setDifficult(2.5);
+    trainingRepository.save(t4);
+
+    Training t5 = new Training();
+    t5.setTrainingId("TR005");
+    t5.setName("营养风险筛查");
+    t5.setContent("学习常用的营养风险筛查工具，掌握营养风险评估的方法与流程。");
+    t5.setTime((short) 6);
+    t5.setKnowledgePoints("K005");
+    t5.setDifficult(3.0);
+    trainingRepository.save(t5);
   }
 }

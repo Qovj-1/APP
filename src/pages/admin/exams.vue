@@ -113,7 +113,8 @@ export default {
         { name: '题库管理', icon: '📝', path: '/pages/admin/questions' },
         { name: '考试管理', icon: '🏆', path: '/pages/admin/exams' },
         { name: '资料管理', icon: '📁', path: '/pages/admin/materials' },
-        { name: '论坛管理', icon: '💬', path: '/pages/admin/forum' }
+        { name: '论坛管理', icon: '💬', path: '/pages/admin/forum' },
+        { name: '实训管理', icon: '⚙️', path: '/pages/admin/trainings' }
       ]
     }
   },

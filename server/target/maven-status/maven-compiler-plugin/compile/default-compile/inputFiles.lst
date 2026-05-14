@@ -6,6 +6,7 @@ E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\conf
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\repo\ExamScoreRepository.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\support\CurrentUser.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\admin\AdminAuthController.java
+E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\admin\AdminTrainingController.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\repo\RealQuestionRepository.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\config\WebConfig.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\dto\ExamPaperDto.java
@@ -13,6 +14,7 @@ E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\app\AppQuestionController.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\admin\AdminUserController.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\config\SecurityConfig.java
+E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\repo\TrainingRepository.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\admin\AdminQuestionController.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\domain\Exercise.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\dto\QuestionResult.java
@@ -21,6 +23,7 @@ E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\conf
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\domain\Banner.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\repo\MockQuestionRepository.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\repo\KnowledgePointRepository.java
+E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\domain\Training.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\repo\CourseRepository.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\dto\ExamSubmitRequest.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\domain\RealQuestion.java
@@ -34,6 +37,7 @@ E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\bootstrap\DataInitializer.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\repo\BannerRepository.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\common\GlobalExceptionHandler.java
+E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\app\AppTrainingController.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\domain\KnowledgePoint.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\app\AppForumController.java
 E:\111aa营养师\uni-preset-vue-vite\server\src\main\java\com\nutritionist\web\app\AppExamController.java

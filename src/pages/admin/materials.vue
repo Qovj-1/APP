@@ -34,7 +34,7 @@
       </view>
       <view class="table-container">
         <view class="table-header">
-          <text class="th">ID</text>
+          <text class="th">分类号</text>
           <text class="th">资料名</text>
           <text class="th">内容</text>
           <text class="th">视频</text>
@@ -44,7 +44,7 @@
         </view>
         <view class="table-body">
           <view v-for="material in materials" :key="material.id" class="table-row">
-            <text class="td">{{ material.id }}</text>
+            <text class="td">{{ material.categoryNo || material.id }}</text>
             <text class="td">{{ material.name }}</text>
             <text class="td">{{ truncateContent(material.content) }}</text>
             <text class="td">{{ material.video ? '有' : '无' }}</text>
@@ -150,7 +150,8 @@ export default {
         { name: '题库管理', icon: '📝', path: '/pages/admin/questions' },
         { name: '考试管理', icon: '🏆', path: '/pages/admin/exams' },
         { name: '资料管理', icon: '📁', path: '/pages/admin/materials' },
-        { name: '论坛管理', icon: '💬', path: '/pages/admin/forum' }
+        { name: '论坛管理', icon: '💬', path: '/pages/admin/forum' },
+        { name: '实训管理', icon: '⚙️', path: '/pages/admin/trainings' }
       ]
     }
   },
